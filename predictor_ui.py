@@ -1,0 +1,93 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'predictor_ui.ui'
+#
+# Created by: PyQt5 UI code generator 5.9.2
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(705, 562)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName("gridLayout")
+        self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
+        self.textBrowser.setObjectName("textBrowser")
+        self.gridLayout.addWidget(self.textBrowser, 2, 0, 1, 2)
+        self.startButton = QtWidgets.QPushButton(self.centralwidget)
+        self.startButton.setObjectName("startButton")
+        self.gridLayout.addWidget(self.startButton, 3, 1, 1, 1)
+        self.progressBar = QtWidgets.QProgressBar(self.centralwidget)
+        self.progressBar.setProperty("value", 0)
+        self.progressBar.setObjectName("progressBar")
+        self.gridLayout.addWidget(self.progressBar, 3, 0, 1, 1)
+        self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
+        self.tabWidget.setObjectName("tabWidget")
+        self.predictTab = QtWidgets.QWidget()
+        self.predictTab.setObjectName("predictTab")
+        self.formLayout = QtWidgets.QFormLayout(self.predictTab)
+        self.formLayout.setObjectName("formLayout")
+        self.radioButton = QtWidgets.QRadioButton(self.predictTab)
+        self.radioButton.setObjectName("radioButton")
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.radioButton)
+        self.radioButton_2 = QtWidgets.QRadioButton(self.predictTab)
+        self.radioButton_2.setObjectName("radioButton_2")
+        self.formLayout.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.radioButton_2)
+        self.radioButton_3 = QtWidgets.QRadioButton(self.predictTab)
+        self.radioButton_3.setObjectName("radioButton_3")
+        self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.radioButton_3)
+        self.tabWidget.addTab(self.predictTab, "")
+        self.seriesPredictTab = QtWidgets.QWidget()
+        self.seriesPredictTab.setObjectName("seriesPredictTab")
+        self.tabWidget.addTab(self.seriesPredictTab, "")
+        self.gridLayout.addWidget(self.tabWidget, 1, 0, 1, 1)
+        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.centralwidget)
+        self.plainTextEdit.setObjectName("plainTextEdit")
+        self.gridLayout.addWidget(self.plainTextEdit, 1, 1, 1, 1)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 705, 23))
+        self.menubar.setObjectName("menubar")
+        self.fileMenu = QtWidgets.QMenu(self.menubar)
+        self.fileMenu.setObjectName("fileMenu")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+        self.importFromFileAction = QtWidgets.QAction(MainWindow)
+        self.importFromFileAction.setObjectName("importFromFileAction")
+        self.saveAsAction = QtWidgets.QAction(MainWindow)
+        self.saveAsAction.setObjectName("saveAsAction")
+        self.predictAction = QtWidgets.QAction(MainWindow)
+        self.predictAction.setObjectName("predictAction")
+        self.seriesPredictAction = QtWidgets.QAction(MainWindow)
+        self.seriesPredictAction.setObjectName("seriesPredictAction")
+        self.fileMenu.addAction(self.importFromFileAction)
+        self.fileMenu.addAction(self.saveAsAction)
+        self.menubar.addAction(self.fileMenu.menuAction())
+
+        self.retranslateUi(MainWindow)
+        self.tabWidget.setCurrentIndex(0)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "v1.0"))
+        self.startButton.setText(_translate("MainWindow", "开始"))
+        self.radioButton.setText(_translate("MainWindow", "自动选择"))
+        self.radioButton_2.setText(_translate("MainWindow", "逻辑回归"))
+        self.radioButton_3.setText(_translate("MainWindow", "神经网络"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.predictTab), _translate("MainWindow", "预测"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.seriesPredictTab), _translate("MainWindow", "序列预测"))
+        self.plainTextEdit.setPlainText(_translate("MainWindow", "在此输入数据"))
+        self.fileMenu.setTitle(_translate("MainWindow", "文件"))
+        self.importFromFileAction.setText(_translate("MainWindow", "导入"))
+        self.saveAsAction.setText(_translate("MainWindow", "另存为"))
+        self.predictAction.setText(_translate("MainWindow", "预测"))
+        self.seriesPredictAction.setText(_translate("MainWindow", "序列预测"))
+
