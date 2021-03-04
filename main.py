@@ -12,7 +12,6 @@ class MainForm(QMainWindow, Ui_MainWindow):
         self.importFromFileAction.triggered.connect(self.open_file)
         self.predictAction.triggered.connect(self.switch_to_predict)
         self.seriesPredictAction.triggered.connect(self.switch_to_seriesPredict)
-        self.ima
 
     def open_file(self):
         fileName, fileType = QtWidgets.QFileDialog.getOpenFileName(self, '选取文件', os.getcwd(), "CSV Files(*.csv)")
