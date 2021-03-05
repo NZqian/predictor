@@ -11,62 +11,161 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>v1.0</string>
+   <string>基于sklearn的轻量级数据分析预测软件V1.0</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="4" column="0">
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="text">
-       <string>在此输入需预测数据</string>
+    <item row="2" column="0" colspan="2">
+     <widget class="QTextBrowser" name="textBrowser">
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;开始运算&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;正在训练模型...完成&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;模型准确率：94.24%&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;正在预测数据...完成&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;运算结束&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-    </item>
-    <item row="2" column="0" colspan="2">
-     <widget class="QTextBrowser" name="textBrowser"/>
     </item>
     <item row="8" column="0" colspan="2">
      <widget class="QProgressBar" name="progressBar">
       <property name="value">
-       <number>0</number>
+       <number>100</number>
       </property>
      </widget>
     </item>
-    <item row="3" column="0" colspan="2">
-     <widget class="QPushButton" name="trainButton">
-      <property name="text">
-       <string>训练</string>
+    <item row="1" column="1">
+     <widget class="QPlainTextEdit" name="plainTextEdit">
+      <property name="plainText">
+       <string>在此输入原数据</string>
       </property>
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QTabWidget" name="tabWidget">
+     <widget class="QTabWidget" name="analyzeTab">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>数据分析</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="6" column="0">
+         <widget class="QLineEdit" name="analyzeLineEdit"/>
+        </item>
+        <item row="6" column="1">
+         <widget class="QPushButton" name="computeButton">
+          <property name="text">
+           <string>计算</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QRadioButton" name="radioButton_4">
+          <property name="text">
+           <string>方差</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QRadioButton" name="avgButton">
+          <property name="text">
+           <string>均值</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QRadioButton" name="KMeansButton">
+          <property name="text">
+           <string>聚类</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QRadioButton" name="histButton">
+          <property name="text">
+           <string>频率直方图</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QRadioButton" name="lineButton">
+          <property name="text">
+           <string>折线图</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="predictTab">
        <attribute name="title">
         <string>预测</string>
        </attribute>
-       <layout class="QFormLayout" name="formLayout">
-        <item row="1" column="0">
-         <widget class="QRadioButton" name="radioButton">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <widget class="QRadioButton" name="autoSelectPredictButton">
           <property name="text">
            <string>自动选择</string>
           </property>
          </widget>
         </item>
-        <item row="3" column="0">
+        <item row="1" column="0">
+         <widget class="QRadioButton" name="radioButton_3">
+          <property name="text">
+           <string>神经网络</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
          <widget class="QRadioButton" name="radioButton_2">
           <property name="text">
            <string>逻辑回归</string>
           </property>
          </widget>
         </item>
-        <item row="2" column="0">
-         <widget class="QRadioButton" name="radioButton_3">
+        <item row="4" column="0">
+         <widget class="QLineEdit" name="lineEdit">
           <property name="text">
-           <string>神经网络</string>
+           <string>在此输入需预测数据</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QPushButton" name="predictButton">
+          <property name="text">
+           <string>预测</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="2">
+         <widget class="QPushButton" name="trainButton">
+          <property name="text">
+           <string>训练</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QRadioButton" name="decisionTreeButton">
+          <property name="text">
+           <string>决策树</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QRadioButton" name="radioButton">
+          <property name="text">
+           <string>KNN</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QRadioButton" name="radioButton_5">
+          <property name="text">
+           <string>朴素贝叶斯</string>
           </property>
          </widget>
         </item>
@@ -76,21 +175,58 @@
        <attribute name="title">
         <string>序列预测</string>
        </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QRadioButton" name="autoSelectSeriesButton">
+          <property name="text">
+           <string>自动选择</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QRadioButton" name="LSTMButton">
+          <property name="text">
+           <string>LSTM</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QRadioButton" name="GRUButton">
+          <property name="text">
+           <string>GRU</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QRadioButton" name="prophetButton">
+          <property name="text">
+           <string>Prophet</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLineEdit" name="seriesLineEdit">
+          <property name="text">
+           <string>在此输入需预测时长</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QPushButton" name="predictSeriesButton">
+          <property name="text">
+           <string>预测</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0" colspan="2">
+         <widget class="QPushButton" name="trainSeriesButton">
+          <property name="text">
+           <string>训练</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QPlainTextEdit" name="plainTextEdit">
-      <property name="plainText">
-       <string>在此输入训练数据</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QPushButton" name="predictButton">
-      <property name="text">
-       <string>预测</string>
-      </property>
      </widget>
     </item>
    </layout>
